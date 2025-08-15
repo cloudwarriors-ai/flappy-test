@@ -1,0 +1,138 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  cursor: pointer;
+}
+
+.game-area {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
+  border: 3px solid #333;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.bird {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #FF0000;
+  border-radius: 50%;
+  border: 2px solid #CC0000;
+  z-index: 10;
+  transition: none;
+}
+
+.bird::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 4px;
+  height: 4px;
+  background: #000;
+  border-radius: 50%;
+}
+
+.bird::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: -2px;
+  width: 8px;
+  height: 6px;
+  background: #FF4500;
+  border-radius: 0 50% 50% 0;
+}
+
+.pipe {
+  position: absolute;
+  width: 50px;
+  background: linear-gradient(to right, #228B22, #32CD32);
+  border: 2px solid #006400;
+  border-radius: 5px;
+}
+
+.pipe-top {
+  top: 0;
+}
+
+.pipe-bottom {
+  bottom: 0;
+}
+
+.pipe::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(to right, #228B22, #32CD32);
+  border: 2px solid #006400;
+  border-radius: 10px;
+}
+
+.pipe-top::before {
+  bottom: -2px;
+}
+
+.pipe-bottom::before {
+  top: -2px;
+}
+
+.score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  z-index: 100;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  border: 3px solid #333;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.message h2 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 28px;
+}
+
+.message p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+}
